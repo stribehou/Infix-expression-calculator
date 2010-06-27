@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SimpleStack.h";
 
-@interface PostfixParser : NSObject {
+@interface PostfixCalculator : NSObject {
 	NSArray* operators;
 	SimpleStack* stack;
 	BOOL hasErrors;
@@ -17,7 +17,7 @@
 
 @property (readonly) BOOL hasErrors;
 
-- (PostfixParser*) init;
+- (PostfixCalculator*) init;
 - (void) dealloc;
 - (NSDecimalNumber *) compute:(NSString*) postfixExpression;
 - (NSDecimalNumber *) computeOperator:(NSString*) operator

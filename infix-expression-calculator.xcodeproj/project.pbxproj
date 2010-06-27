@@ -8,29 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		221CBB0C11D7A1CF00577C03 /* InfixExpressionCalculatorTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB0711D7A1CF00577C03 /* InfixExpressionCalculatorTestCase.m */; };
-		221CBB0D11D7A1CF00577C03 /* PostfixParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 221CBB0811D7A1CF00577C03 /* PostfixParser.h */; };
-		221CBB0E11D7A1CF00577C03 /* PostfixParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB0911D7A1CF00577C03 /* PostfixParser.m */; };
 		221CBB0F11D7A1CF00577C03 /* SimpleStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 221CBB0A11D7A1CF00577C03 /* SimpleStack.h */; };
 		221CBB1011D7A1CF00577C03 /* SimpleStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB0B11D7A1CF00577C03 /* SimpleStack.m */; };
 		221CBB2611D7A25100577C03 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221CBB2511D7A25100577C03 /* SenTestingKit.framework */; };
 		221CBB4311D7A2D400577C03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		221CBB4411D7A2D400577C03 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221CBB2511D7A25100577C03 /* SenTestingKit.framework */; };
 		221CBB4511D7A2D500577C03 /* InfixExpressionCalculatorTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB0711D7A1CF00577C03 /* InfixExpressionCalculatorTestCase.m */; };
-		221CBB4611D7A2D600577C03 /* PostfixParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB0911D7A1CF00577C03 /* PostfixParser.m */; };
 		221CBB4711D7A2D700577C03 /* SimpleStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB0B11D7A1CF00577C03 /* SimpleStack.m */; };
+		221CBB8E11D7B05600577C03 /* InfixToPostfix.h in Headers */ = {isa = PBXBuildFile; fileRef = 221CBB8C11D7B05600577C03 /* InfixToPostfix.h */; };
+		221CBB8F11D7B05600577C03 /* InfixToPostfix.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB8D11D7B05600577C03 /* InfixToPostfix.m */; };
+		221CBB9011D7B05600577C03 /* InfixToPostfix.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB8D11D7B05600577C03 /* InfixToPostfix.m */; };
+		221CBB9311D7B0CA00577C03 /* PostfixCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 221CBB9111D7B0CA00577C03 /* PostfixCalculator.h */; };
+		221CBB9411D7B0CA00577C03 /* PostfixCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB9211D7B0CA00577C03 /* PostfixCalculator.m */; };
+		221CBB9511D7B0CA00577C03 /* PostfixCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBB9211D7B0CA00577C03 /* PostfixCalculator.m */; };
 		AA747D9F0F9514B9006C5449 /* infix_expression_calculator_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* infix_expression_calculator_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		221CBB0711D7A1CF00577C03 /* InfixExpressionCalculatorTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfixExpressionCalculatorTestCase.m; path = Classes/InfixExpressionCalculatorTestCase.m; sourceTree = "<group>"; };
-		221CBB0811D7A1CF00577C03 /* PostfixParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostfixParser.h; path = Classes/PostfixParser.h; sourceTree = "<group>"; };
-		221CBB0911D7A1CF00577C03 /* PostfixParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostfixParser.m; path = Classes/PostfixParser.m; sourceTree = "<group>"; };
 		221CBB0A11D7A1CF00577C03 /* SimpleStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleStack.h; path = Classes/SimpleStack.h; sourceTree = "<group>"; };
 		221CBB0B11D7A1CF00577C03 /* SimpleStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleStack.m; path = Classes/SimpleStack.m; sourceTree = "<group>"; };
 		221CBB2511D7A25100577C03 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		221CBB3211D7A28B00577C03 /* TestBundle.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestBundle.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		221CBB3311D7A28B00577C03 /* TestBundle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestBundle-Info.plist"; sourceTree = "<group>"; };
+		221CBB8C11D7B05600577C03 /* InfixToPostfix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfixToPostfix.h; sourceTree = "<group>"; };
+		221CBB8D11D7B05600577C03 /* InfixToPostfix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfixToPostfix.m; sourceTree = "<group>"; };
+		221CBB9111D7B0CA00577C03 /* PostfixCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostfixCalculator.h; path = Classes/PostfixCalculator.h; sourceTree = "<group>"; };
+		221CBB9211D7B0CA00577C03 /* PostfixCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostfixCalculator.m; path = Classes/PostfixCalculator.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* infix_expression_calculator_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infix_expression_calculator_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libinfix_expression_calculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libinfix_expression_calculator.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,11 +96,13 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				221CBB9111D7B0CA00577C03 /* PostfixCalculator.h */,
+				221CBB9211D7B0CA00577C03 /* PostfixCalculator.m */,
 				221CBB0711D7A1CF00577C03 /* InfixExpressionCalculatorTestCase.m */,
-				221CBB0811D7A1CF00577C03 /* PostfixParser.h */,
-				221CBB0911D7A1CF00577C03 /* PostfixParser.m */,
 				221CBB0A11D7A1CF00577C03 /* SimpleStack.h */,
 				221CBB0B11D7A1CF00577C03 /* SimpleStack.m */,
+				221CBB8C11D7B05600577C03 /* InfixToPostfix.h */,
+				221CBB8D11D7B05600577C03 /* InfixToPostfix.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -116,8 +123,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* infix_expression_calculator_Prefix.pch in Headers */,
-				221CBB0D11D7A1CF00577C03 /* PostfixParser.h in Headers */,
 				221CBB0F11D7A1CF00577C03 /* SimpleStack.h in Headers */,
+				221CBB8E11D7B05600577C03 /* InfixToPostfix.h in Headers */,
+				221CBB9311D7B0CA00577C03 /* PostfixCalculator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,8 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				221CBB4511D7A2D500577C03 /* InfixExpressionCalculatorTestCase.m in Sources */,
-				221CBB4611D7A2D600577C03 /* PostfixParser.m in Sources */,
 				221CBB4711D7A2D700577C03 /* SimpleStack.m in Sources */,
+				221CBB9011D7B05600577C03 /* InfixToPostfix.m in Sources */,
+				221CBB9511D7B0CA00577C03 /* PostfixCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				221CBB0C11D7A1CF00577C03 /* InfixExpressionCalculatorTestCase.m in Sources */,
-				221CBB0E11D7A1CF00577C03 /* PostfixParser.m in Sources */,
 				221CBB1011D7A1CF00577C03 /* SimpleStack.m in Sources */,
+				221CBB8F11D7B05600577C03 /* InfixToPostfix.m in Sources */,
+				221CBB9411D7B0CA00577C03 /* PostfixCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

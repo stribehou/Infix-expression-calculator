@@ -6,14 +6,14 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "PostfixParser.h"
+#import "PostfixCalculator.h"
 
 
-@implementation PostfixParser
+@implementation PostfixCalculator
 
 @synthesize  hasErrors;
 
-- (PostfixParser*) init{
+- (PostfixCalculator*) init{
 	self = [super init];
 	if (self){
 		operators = [NSArray arrayWithObjects: @"+", @"-", @"*", @"/", nil];

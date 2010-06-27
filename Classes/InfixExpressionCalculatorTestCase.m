@@ -12,7 +12,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import <UIKit/UIKit.h>
 
-#import "PostfixParser.h"
+#import "PostfixCalculator.h"
 #import "SimpleStack.h"
 
 @interface OperationTestCase : SenTestCase {
@@ -50,7 +50,7 @@
 
 
 - (void) testPostfixComputation{
-	PostfixParser *postfix = [[PostfixParser  alloc] init];
+	PostfixCalculator *postfix = [[PostfixCalculator  alloc] init];
 	  
 	NSDecimalNumber * result = [postfix compute:@"5 1 2 + 4 * + 3 -"];
 	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString:@"14"];
