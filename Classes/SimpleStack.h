@@ -20,5 +20,6 @@
 - (int) size;
 - (void) print;
 - (BOOL) empty;
+- (id) peek;
 
 @end

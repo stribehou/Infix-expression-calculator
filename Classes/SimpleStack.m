@@ -30,7 +30,7 @@
 	if ([array count ] < 1)
 		return nil;
 	
-	id item = [array lastObject];
+	id item = [[[array lastObject] retain] autorelease];
 	[array removeLastObject];
 	return item;
 }
@@ -42,5 +42,12 @@
 }
 
 - (BOOL) empty { return [array count] == 0;}
+
+- (id) peek{ 
+	if ([array count] < 1)
+		return nil;
+	
+	return [array lastObject];
+}
 
 @end

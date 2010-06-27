@@ -37,8 +37,9 @@
 		if ([self precedenceOf:token] != 0){
 			// token is as operator, pop all operators of higher or equal precedence off the stack, and append them to the output
 			NSString *op = [opStack peek];
-			while (op && [operators containsObject:op] && [self precedenceOf: op isHigherOrEqualThan: token]) {
-				[output appendString: [NSString stringWithFormat: @" %@ ", [opStack pop]]];
+			while (op && [operators containsObject:op] && 
+				   [self precedenceOf: op isHigherOrEqualThan: token]) {
+				[output appendString: [NSString stringWithFormat: @"%@ ", [opStack pop]]];
 				op = [opStack peek];
 			}
 			// then push the operator on the stack
@@ -54,7 +55,7 @@
 			// pop operators off the stack and append them to the output while the popped element is not the opening bracket
 			NSString  * op = [opStack pop];
 		    while ( op  && ([op compare: @"("] != 0)){
-				[output appendString: [NSString stringWithFormat: @" %@ ", op]];
+				[output appendString: [NSString stringWithFormat: @"%@ ", op]];
 				op = [opStack pop];
 				NSLog(@"popped token : %@", token);
 			}
@@ -65,7 +66,7 @@
 		} else {
 			//token is an operand, append it to the output
 			NSLog(@"operand : %@", token);
-			[output appendString: [NSString stringWithFormat: @" %@ ", token]];
+			[output appendString: [NSString stringWithFormat: @"%@ ", token]];
 		}
 		
 		[opStack print];
@@ -74,26 +75,61 @@
 	
 	//pop remaining operators off the stack, and append them to the output
 	while (! [opStack empty]) {
-		[output appendString: [NSString stringWithFormat: @" %@ ", [opStack pop]]];
+		[output appendString: [NSString stringWithFormat: @"%@ ", [opStack pop]]];
 	}
 	
-//	[opStack release];
+	[opStack release];
 	
-	return output;
+	return [output stringByTrimmingCharactersInSet:
+			[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 
 - (NSArray*) tokenize: (NSString*) expression {
+	NSMutableArray * tokens = [NSMutableArray arrayWithCapacity:[expression length]];
 	
-	//for now assume that each token is separated by one space
-	NSString* strippedExpression = [expression stringByTrimmingCharactersInSet:
-									[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	return [strippedExpression componentsSeparatedByString: @" "];
+	unichar c;
+	NSMutableString * numberBuf = [NSMutableString stringWithCapacity: 5];
+	int length = [expression length];
 	
-	//char c;
-//	
-//	for (int i = 0; i< [expression length]; i++)
-//		c = [theString characterAtIndex: i];
+	for (int i = 0; i< length; i++){
+		c = [expression characterAtIndex: i];
+		switch (c) {
+			case '+':
+			case '/':
+			case '*':
+		    case '(':
+		    case ')':
+			case '-':
+				if ([numberBuf length] > 0){
+					[tokens addObject:  [NSString stringWithString: numberBuf]];
+					[numberBuf setString:@""];
+				}
+				[tokens addObject: [NSString stringWithCharacters: &c length:1]];
+				break;
+			case ' ':
+				break;
+			case '1':
+			case '2':
+			case '3':
+			case '4':
+			case '5':
+			case '6':
+			case '8':
+			case '9':
+			case '0':
+				[numberBuf appendString : [NSString stringWithCharacters: &c length:1]];
+			default:
+				break;
+		}
+	}
+	if ([numberBuf length] > 0){
+		[tokens addObject:  [NSString stringWithString: numberBuf]];
+		[numberBuf setString:@""];
+	}
+	
+	NSLog(@"tokens : [ %@ ]", [tokens componentsJoinedByString: @" , "]);	
+	return tokens;
 }
 
 

@@ -14,6 +14,7 @@
 
 #import "PostfixCalculator.h"
 #import "SimpleStack.h"
+#import "InfixToPostfix.h"
 
 @interface OperationTestCase : SenTestCase {
 	
@@ -58,14 +59,26 @@
 	[result retain];
 	[expected retain];	
 
-	STAssertEqualObjects(result, expected
-						 ,
-						 @"Erreur computeWith : Résultat incorrect");
+	STAssertEqualObjects(result, expected,
+						 @"Postfix calculation error : unexpected result");
 	
 	[postfix release];
 }
 
+- (void) testInfixToPostfix{
 
+	InfixToPostfix *itp = [[InfixToPostfix alloc] init];
+	NSString * result = [itp parseInfix:@"5 + ((123 + 2) *4) -3"];
+	NSString * expected = @"5 123 2 + 4 * + 3 -";
+	
+	[result retain];
+	[expected retain];	
+	
+	STAssertEqualObjects(result, expected,
+						 @"Infix to Postfix conversion error");
+	
+	[itp release];
+}
 
 
 #endif
