@@ -54,8 +54,8 @@
 - (void) testPostfixComputation{
 	PostfixCalculator *postfix = [[PostfixCalculator  alloc] init];
 	  
-	NSDecimalNumber * result = [postfix compute:@"5 1 2 + 4 * + -3 -"];
-	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString:@"20"];
+	NSDecimalNumber * result = [postfix compute:@"5.202343 1 2 + 4 * + -3 -"];
+	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString:@"20.202343"];
 
 	STAssertEqualObjects(result, expected,
 						 @"Postfix calculation error : unexpected result");
@@ -66,8 +66,8 @@
 - (void) testInfixToPostfix{
 
 	InfixToPostfix *itp = [[InfixToPostfix alloc] init];
-	NSString * result = [itp parseInfix:@"5 + ((123 hgh + 2) *4) - -3"];
-	NSString * expected = @"5 123 2 + 4 * + -3 -";
+	NSString * result = [itp parseInfix:@"5 + ((123.2243224545 hgh + 2) *4) - -3  "];
+	NSString * expected = @"5 123.2243224545 2 + 4 * + -3 -";
 	
 
 	
@@ -80,7 +80,7 @@
 - (void) testCalculator{
 	InfixCalculator * calc = [[InfixCalculator alloc] init];
 	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString: @"42"];
-	NSDecimalNumber * result = [calc computeExpression: @"(10 * 2 + ((40 / 4) *4) / 4 *2 +20 *4 -78 )"];
+	NSDecimalNumber * result = [calc computeExpression: @"(10.5656565656 * 2 + ((40 / 4) *4) / 4 *2 +20 *4 -78 - 0.5656565656 *2)"];
 	
 	STAssertEqualObjects(result, expected,
 						 @"Calculator result error");

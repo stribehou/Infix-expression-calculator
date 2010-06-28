@@ -125,6 +125,7 @@
 			case '8':
 			case '9':
 			case '0':
+			case '.':
 				lastTokenWasAnOperator = NO;
 				[numberBuf appendString : [NSString stringWithCharacters: &c length:1]];
 			case ' ':
