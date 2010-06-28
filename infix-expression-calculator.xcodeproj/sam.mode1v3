@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>221CBD0911D82EE200577C03</string>
+						<string>221CBD3811D834B100577C03</string>
 						<key>history</key>
 						<array>
 							<string>221CBC6111D7EC2D00577C03</string>
@@ -316,7 +316,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -361,7 +361,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InfixToPostfix.m</string>
+								<string>InfixToPostfix.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -369,19 +369,20 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>InfixToPostfix.m</string>
+										<string>InfixToPostfix.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>221CBD0811D82EE200577C03</string>
+										<string>221CBD3711D834B100577C03</string>
 										<key>history</key>
 										<array>
-											<string>221CBCF911D82D6F00577C03</string>
-											<string>221CBCFC11D82D6F00577C03</string>
-											<string>221CBD0411D82EE200577C03</string>
-											<string>221CBD0511D82EE200577C03</string>
-											<string>221CBD0611D82EE200577C03</string>
-											<string>221CBD0711D82EE200577C03</string>
+											<string>221CBD3011D834B100577C03</string>
+											<string>221CBD3111D834B100577C03</string>
+											<string>221CBD3211D834B100577C03</string>
+											<string>221CBD3311D834B100577C03</string>
+											<string>221CBD3411D834B100577C03</string>
+											<string>221CBD3511D834B100577C03</string>
+											<string>221CBD3611D834B100577C03</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -579,12 +580,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>221CBD0B11D82EE200577C03</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>221CBC9611D80D4000577C03</string>
 		<string>221CBAE311D79D7200577C03</string>
 		<string>/Users/sam/proj/infix-expression-calculator/infix-expression-calculator.xcodeproj</string>
-		<string>221CBD0B11D82EE200577C03</string>
 	</array>
 	<key>WindowString</key>
 	<string>5 122 1379 1294 0 0 2560 1418 </string>
@@ -608,7 +609,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>InfixExpressionCalculatorTestCase.m</string>
+								<string>InfixToPostfix.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -1459,18 +1460,13 @@
 				<string>221CBD0B11D82EE200577C03</string>
 				<string>221CBD0C11D82EE200577C03</string>
 				<string>221CBD0A11D82EE200577C03</string>
-				<string>221CBD0D11D82EE200577C03</string>
-				<string>221CBD0E11D82EE200577C03</string>
-				<string>221CBD0F11D82EE200577C03</string>
-				<string>221CBD1011D82EE200577C03</string>
-				<string>221CBD1111D82EE200577C03</string>
 			</array>
 			<key>WindowString</key>
 			<string>26 1037 500 356 0 0 2560 1418 </string>
 			<key>WindowToolGUID</key>
 			<string>221CBD0B11D82EE200577C03</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 	</array>
 </dict>

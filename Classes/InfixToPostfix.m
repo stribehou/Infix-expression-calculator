@@ -14,9 +14,6 @@
 
 - (InfixToPostfix*) init{
 	self = [super init];
-	if (self){
-		operators = [NSArray arrayWithObjects: @"+", @"-", @"*", @"/", nil];
-	}
 	
 	return self;
 }
@@ -37,7 +34,7 @@
 		if ([self precedenceOf:token] != 0){
 			// token is an operator, pop all operators of higher or equal precedence off the stack, and append them to the output
 			NSString *op = [opStack peek];
-			while (op && [operators containsObject:op] && 
+			while (op && [self precedenceOf:op] != 0 && 
 				   [self precedenceOf: op isHigherOrEqualThan: token]) {
 				[output appendString: [NSString stringWithFormat: @"%@ ", [opStack pop]]];
 				op = [opStack peek];

@@ -11,7 +11,6 @@
 
 
 @interface InfixToPostfix : NSObject {
-	NSArray* operators;
 	BOOL hasErrors;
 	NSDictionary * operatorPrecedence;
 }
