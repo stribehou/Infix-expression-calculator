@@ -14,6 +14,7 @@
 	BOOL hasErrors;
 	NSDictionary * operatorPrecedence;
 }
+@property (readonly) BOOL hasErrors;
 
 - (InfixToPostfix*) init;
 - (void) dealloc;

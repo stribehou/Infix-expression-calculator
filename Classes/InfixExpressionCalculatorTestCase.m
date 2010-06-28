@@ -15,6 +15,7 @@
 #import "PostfixCalculator.h"
 #import "SimpleStack.h"
 #import "InfixToPostfix.h"
+#import "InfixCalculator.h"
 
 @interface OperationTestCase : SenTestCase {
 	
@@ -76,6 +77,14 @@
 	[itp release];
 }
 
+- (void) testCalculator{
+	InfixCalculator * calc = [[InfixCalculator alloc] init];
+	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString: @"42"];
+	NSDecimalNumber * result = [calc computeExpression: @"(10 * 2 + ((40 / 4) *4) / 4 *2 +20 *4 -78 )"];
+	
+	STAssertEqualObjects(result, expected,
+						 @"Calculator result error");
+}
 
 #endif
 

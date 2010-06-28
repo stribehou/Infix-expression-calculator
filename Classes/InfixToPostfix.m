@@ -11,6 +11,7 @@
 
 @implementation InfixToPostfix
 
+@synthesize hasErrors;
 
 - (InfixToPostfix*) init{
 	self = [super init];
@@ -120,6 +121,7 @@
 			case '4':
 			case '5':
 			case '6':
+			case '7':
 			case '8':
 			case '9':
 			case '0':

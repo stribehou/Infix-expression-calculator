@@ -21,6 +21,9 @@
 		221CBCE511D81D6E00577C03 /* InfixToPostfix.h in Headers */ = {isa = PBXBuildFile; fileRef = 221CBCE311D81D6E00577C03 /* InfixToPostfix.h */; };
 		221CBCE611D81D6E00577C03 /* InfixToPostfix.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBCE411D81D6E00577C03 /* InfixToPostfix.m */; };
 		221CBCE711D81D6E00577C03 /* InfixToPostfix.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBCE411D81D6E00577C03 /* InfixToPostfix.m */; };
+		221CBDCD11D941C300577C03 /* InfixCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBDCC11D941C300577C03 /* InfixCalculator.m */; };
+		221CBDCE11D941C300577C03 /* InfixCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = 221CBDCB11D941C300577C03 /* InfixCalculator.h */; };
+		221CBDCF11D941C300577C03 /* InfixCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 221CBDCC11D941C300577C03 /* InfixCalculator.m */; };
 		AA747D9F0F9514B9006C5449 /* infix_expression_calculator_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* infix_expression_calculator_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +39,8 @@
 		221CBB9211D7B0CA00577C03 /* PostfixCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostfixCalculator.m; path = Classes/PostfixCalculator.m; sourceTree = "<group>"; };
 		221CBCE311D81D6E00577C03 /* InfixToPostfix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfixToPostfix.h; path = Classes/InfixToPostfix.h; sourceTree = "<group>"; };
 		221CBCE411D81D6E00577C03 /* InfixToPostfix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfixToPostfix.m; path = Classes/InfixToPostfix.m; sourceTree = "<group>"; };
+		221CBDCB11D941C300577C03 /* InfixCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfixCalculator.h; path = Classes/InfixCalculator.h; sourceTree = "<group>"; };
+		221CBDCC11D941C300577C03 /* InfixCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfixCalculator.m; path = Classes/InfixCalculator.m; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* infix_expression_calculator_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infix_expression_calculator_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libinfix_expression_calculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libinfix_expression_calculator.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +101,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				221CBDCB11D941C300577C03 /* InfixCalculator.h */,
+				221CBDCC11D941C300577C03 /* InfixCalculator.m */,
 				221CBCE311D81D6E00577C03 /* InfixToPostfix.h */,
 				221CBCE411D81D6E00577C03 /* InfixToPostfix.m */,
 				221CBB9111D7B0CA00577C03 /* PostfixCalculator.h */,
@@ -126,6 +133,7 @@
 				221CBB0F11D7A1CF00577C03 /* SimpleStack.h in Headers */,
 				221CBB9311D7B0CA00577C03 /* PostfixCalculator.h in Headers */,
 				221CBCE511D81D6E00577C03 /* InfixToPostfix.h in Headers */,
+				221CBDCE11D941C300577C03 /* InfixCalculator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +229,7 @@
 				221CBB4711D7A2D700577C03 /* SimpleStack.m in Sources */,
 				221CBB9511D7B0CA00577C03 /* PostfixCalculator.m in Sources */,
 				221CBCE711D81D6E00577C03 /* InfixToPostfix.m in Sources */,
+				221CBDCD11D941C300577C03 /* InfixCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +241,7 @@
 				221CBB1011D7A1CF00577C03 /* SimpleStack.m in Sources */,
 				221CBB9411D7B0CA00577C03 /* PostfixCalculator.m in Sources */,
 				221CBCE611D81D6E00577C03 /* InfixToPostfix.m in Sources */,
+				221CBDCF11D941C300577C03 /* InfixCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
