@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>221CBCE011D81AB000577C03</string>
+						<string>221CBD0911D82EE200577C03</string>
 						<key>history</key>
 						<array>
 							<string>221CBC6111D7EC2D00577C03</string>
@@ -316,7 +316,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>8</integer>
+									<integer>3</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -373,16 +373,15 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>221CBCDF11D81AB000577C03</string>
+										<string>221CBD0811D82EE200577C03</string>
 										<key>history</key>
 										<array>
-											<string>221CBCD811D81AB000577C03</string>
-											<string>221CBCD911D81AB000577C03</string>
-											<string>221CBCDA11D81AB000577C03</string>
-											<string>221CBCDB11D81AB000577C03</string>
-											<string>221CBCDC11D81AB000577C03</string>
-											<string>221CBCDD11D81AB000577C03</string>
-											<string>221CBCDE11D81AB000577C03</string>
+											<string>221CBCF911D82D6F00577C03</string>
+											<string>221CBCFC11D82D6F00577C03</string>
+											<string>221CBD0411D82EE200577C03</string>
+											<string>221CBD0511D82EE200577C03</string>
+											<string>221CBD0611D82EE200577C03</string>
+											<string>221CBD0711D82EE200577C03</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -585,6 +584,7 @@
 		<string>221CBC9611D80D4000577C03</string>
 		<string>221CBAE311D79D7200577C03</string>
 		<string>/Users/sam/proj/infix-expression-calculator/infix-expression-calculator.xcodeproj</string>
+		<string>221CBD0B11D82EE200577C03</string>
 	</array>
 	<key>WindowString</key>
 	<string>5 122 1379 1294 0 0 2560 1418 </string>
@@ -1410,33 +1410,40 @@
 			<integer>0</integer>
 		</dict>
 		<dict>
+			<key>FirstTimeWindowDisplayed</key>
+			<false/>
 			<key>Identifier</key>
 			<string>windowTool.refactoring</string>
 			<key>IncludeInToolsMenu</key>
 			<integer>0</integer>
+			<key>IsVertical</key>
+			<true/>
 			<key>Layout</key>
 			<array>
 				<dict>
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<integer>1</integer>
+							<key>ContentConfiguration</key>
+							<dict>
+								<key>PBXProjectModuleGUID</key>
+								<string>221CBD0A11D82EE200577C03</string>
+							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{0, 0}, {500, 335}</string>
+								<string>{{0, 0}, {500, 315}}</string>
 								<key>RubberWindowFrame</key>
-								<string>{0, 0}, {500, 335}</string>
+								<string>26 1037 500 356 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCRefactoringModule</string>
 							<key>Proportion</key>
-							<string>100%</string>
+							<string>315pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>100%</string>
+					<string>315pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -1445,8 +1452,25 @@
 			<array>
 				<string>XCRefactoringModule</string>
 			</array>
+			<key>StatusbarIsVisible</key>
+			<true/>
+			<key>TableOfContents</key>
+			<array>
+				<string>221CBD0B11D82EE200577C03</string>
+				<string>221CBD0C11D82EE200577C03</string>
+				<string>221CBD0A11D82EE200577C03</string>
+				<string>221CBD0D11D82EE200577C03</string>
+				<string>221CBD0E11D82EE200577C03</string>
+				<string>221CBD0F11D82EE200577C03</string>
+				<string>221CBD1011D82EE200577C03</string>
+				<string>221CBD1111D82EE200577C03</string>
+			</array>
 			<key>WindowString</key>
-			<string>200 200 500 356 0 0 1920 1200 </string>
+			<string>26 1037 500 356 0 0 2560 1418 </string>
+			<key>WindowToolGUID</key>
+			<string>221CBD0B11D82EE200577C03</string>
+			<key>WindowToolIsVisible</key>
+			<true/>
 		</dict>
 	</array>
 </dict>

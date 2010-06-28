@@ -35,7 +35,7 @@
 	for (NSString *token in tokens){
 		NSLog(@"token : '%@'", token);
 		if ([self precedenceOf:token] != 0){
-			// token is as operator, pop all operators of higher or equal precedence off the stack, and append them to the output
+			// token is an operator, pop all operators of higher or equal precedence off the stack, and append them to the output
 			NSString *op = [opStack peek];
 			while (op && [operators containsObject:op] && 
 				   [self precedenceOf: op isHigherOrEqualThan: token]) {
@@ -91,6 +91,7 @@
 	unichar c;
 	NSMutableString * numberBuf = [NSMutableString stringWithCapacity: 5];
 	int length = [expression length];
+	BOOL lastTokenWasAnOperator = NO;
 	
 	for (int i = 0; i< length; i++){
 		c = [expression characterAtIndex: i];
@@ -98,16 +99,23 @@
 			case '+':
 			case '/':
 			case '*':
-		    case '(':
-		    case ')':
-			case '-':
-				if ([numberBuf length] > 0){
-					[tokens addObject:  [NSString stringWithString: numberBuf]];
-					[numberBuf setString:@""];
-				}
-				[tokens addObject: [NSString stringWithCharacters: &c length:1]];
+				lastTokenWasAnOperator = YES;
+				[self addNumber: numberBuf andToken: c toTokens:tokens];
 				break;
-			case ' ':
+			case '(':
+		    case ')':
+				lastTokenWasAnOperator = NO;
+				[self addNumber: numberBuf andToken: c toTokens:tokens];
+				break;
+			case '-':
+				if (lastTokenWasAnOperator){
+					lastTokenWasAnOperator = NO;
+					[numberBuf appendString : [NSString stringWithCharacters: &c length:1]];	
+				} else {
+					lastTokenWasAnOperator = YES;
+					[self addNumber: numberBuf andToken: c toTokens:tokens];
+				}
+
 				break;
 			case '1':
 			case '2':
@@ -118,18 +126,28 @@
 			case '8':
 			case '9':
 			case '0':
+				lastTokenWasAnOperator = NO;
 				[numberBuf appendString : [NSString stringWithCharacters: &c length:1]];
+			case ' ':
+				break;
 			default:
+				NSLog(@"Unsupported character in input expression : %c, discarding.", c);
 				break;
 		}
 	}
+	if ([numberBuf length] > 0)
+		[tokens addObject:  [NSString stringWithString: numberBuf]];
+	
+	NSLog(@"tokens : [ %@ ]", [tokens componentsJoinedByString: @" , "]);	
+	return tokens;
+}
+
+- (void) addNumber:(NSMutableString*) numberBuf andToken:(unichar) token toTokens : (NSMutableArray*) tokens{
 	if ([numberBuf length] > 0){
 		[tokens addObject:  [NSString stringWithString: numberBuf]];
 		[numberBuf setString:@""];
 	}
-	
-	NSLog(@"tokens : [ %@ ]", [tokens componentsJoinedByString: @" , "]);	
-	return tokens;
+	[tokens addObject: [NSString stringWithCharacters: &token length:1]];			
 }
 
 
@@ -138,7 +156,6 @@
 }
 
 - (NSUInteger) precedenceOf: (NSString*) operator{
-	NSLog(@"precedence : %@", operator);
 	if ([operator compare: @"+"] == 0 )
 		return 1;
 	else if ([operator compare: @"-"] == 0 )

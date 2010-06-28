@@ -22,4 +22,6 @@
 - (NSString*) parseInfix: (NSString*) infixExpression;
 - (NSArray*) tokenize: (NSString*) expression;
 - (NSUInteger) precedenceOf: (NSString*) operator;
+
+- (void) addNumber:(NSMutableString*) numberBuf andToken:(unichar) token toTokens : (NSMutableArray*) tokens; 
 @end

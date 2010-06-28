@@ -34,16 +34,16 @@
 	
 	STAssertEquals([stack size],
 						 2,
-						 @"Erreur stack", nil);
+						 @"Stack size should have been 2", nil);
 	
 	NSString* item = [[stack pop] autorelease];
 	STAssertEqualObjects(item,
 						@"b",
-						 @"Erreur stack : mauvais item après dépilage", nil);
+						 @"Stack pop gave wrong item ??", nil);
 	[stack pop];
 	STAssertEquals([stack empty],
 						 YES,
-						 @"Erreur stack", nil);
+						 @"Stack should be empty", nil);
 	
 	
 	[stack release];
@@ -53,11 +53,8 @@
 - (void) testPostfixComputation{
 	PostfixCalculator *postfix = [[PostfixCalculator  alloc] init];
 	  
-	NSDecimalNumber * result = [postfix compute:@"5 1 2 + 4 * + 3 -"];
-	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString:@"14"];
-	
-	[result retain];
-	[expected retain];	
+	NSDecimalNumber * result = [postfix compute:@"5 1 2 + 4 * + -3 -"];
+	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString:@"20"];
 
 	STAssertEqualObjects(result, expected,
 						 @"Postfix calculation error : unexpected result");
@@ -68,11 +65,10 @@
 - (void) testInfixToPostfix{
 
 	InfixToPostfix *itp = [[InfixToPostfix alloc] init];
-	NSString * result = [itp parseInfix:@"5 + ((123 + 2) *4) -3"];
-	NSString * expected = @"5 123 2 + 4 * + 3 -";
+	NSString * result = [itp parseInfix:@"5 + ((123 hgh + 2) *4) - -3"];
+	NSString * expected = @"5 123 2 + 4 * + -3 -";
 	
-	[result retain];
-	[expected retain];	
+
 	
 	STAssertEqualObjects(result, expected,
 						 @"Infix to Postfix conversion error");
