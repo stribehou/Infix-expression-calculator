@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>221CBE1111D9496A00577C03</string>
+						<string>221CBE1711D94B2400577C03</string>
 						<key>history</key>
 						<array>
 							<string>221CBD4E11D920C700577C03</string>
@@ -373,18 +373,18 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>221CBE1011D9496A00577C03</string>
+										<string>221CBE1611D94B2400577C03</string>
 										<key>history</key>
 										<array>
 											<string>221CBE0711D9496A00577C03</string>
 											<string>221CBE0811D9496A00577C03</string>
 											<string>221CBE0911D9496A00577C03</string>
 											<string>221CBE0A11D9496A00577C03</string>
-											<string>221CBE0B11D9496A00577C03</string>
 											<string>221CBE0C11D9496A00577C03</string>
 											<string>221CBE0D11D9496A00577C03</string>
 											<string>221CBE0E11D9496A00577C03</string>
-											<string>221CBE0F11D9496A00577C03</string>
+											<string>221CBE1411D94B2400577C03</string>
+											<string>221CBE1511D94B2400577C03</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -583,8 +583,8 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>221CBC9611D80D4000577C03</string>
-		<string>221CBAE311D79D7200577C03</string>
 		<string>/Users/sam/proj/infix-expression-calculator/infix-expression-calculator.xcodeproj</string>
+		<string>221CBAE311D79D7200577C03</string>
 	</array>
 	<key>WindowString</key>
 	<string>8 112 1379 1294 0 0 2560 1418 </string>

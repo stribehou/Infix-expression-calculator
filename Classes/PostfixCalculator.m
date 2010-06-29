@@ -17,6 +17,7 @@
 	self = [super init];
 	if (self){
 		operators = [NSArray arrayWithObjects: @"+", @"-", @"*", @"/", nil];
+		[operators retain];
 		stack = [[SimpleStack alloc] init];
 	}
 	
@@ -24,13 +25,13 @@
 }
 
 - (void) dealloc{
+	[operators release];
 	[stack release];
 	[super dealloc];
 }
 
 
 - (NSDecimalNumber*) compute:(NSString*) postfixExpression{
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSString* strippedExpression = [postfixExpression stringByTrimmingCharactersInSet:
 									[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	NSArray *tokens = [strippedExpression componentsSeparatedByString: @" "];
@@ -48,7 +49,6 @@
 			if (! (firstOperand && secondOperand)){
 				hasErrors = YES;
 				NSLog(@"Not enough operands on stack for given operator");
-				[pool release];
 				return [NSDecimalNumber decimalNumberWithString : @"-1"];
 			}
 			
@@ -78,10 +78,8 @@
 		NSLog(@"Error : Invalid RPN expression. Stack contains %d elements after computing expression, only one should remain.", 
 			  [stack size]);
 		hasErrors = YES;
-		[pool release];
 		return [[NSDecimalNumber decimalNumberWithString : @"-1"] autorelease];
 	} else {
-		[pool release];
 		return  [stack pop];
 	}
 }

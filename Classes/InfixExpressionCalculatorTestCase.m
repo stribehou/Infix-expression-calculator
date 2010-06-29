@@ -84,6 +84,7 @@
 	
 	STAssertEqualObjects(result, expected,
 						 @"Calculator result error");
+	[calc release];
 }
 
 #endif
