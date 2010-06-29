@@ -11,10 +11,8 @@
 
 
 @interface InfixToPostfix : NSObject {
-	BOOL hasErrors;
 	NSDictionary * operatorPrecedence;
 }
-@property (readonly) BOOL hasErrors;
 
 - (InfixToPostfix*) init;
 - (void) dealloc;
@@ -22,6 +20,7 @@
 - (NSString*) parseInfix: (NSString*) infixExpression;
 - (NSArray*) tokenize: (NSString*) expression;
 - (NSUInteger) precedenceOf: (NSString*) operator;
+- (BOOL) hasBalancedBrackets:(NSString *)expression;
 
 - (void) addNumber:(NSMutableString*) numberBuf andToken:(unichar) token toTokens : (NSMutableArray*) tokens; 
 @end

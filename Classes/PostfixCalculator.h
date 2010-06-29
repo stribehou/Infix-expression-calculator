@@ -12,10 +12,8 @@
 @interface PostfixCalculator : NSObject {
 	NSArray* operators;
 	SimpleStack* stack;
-	BOOL hasErrors;
 }
 
-@property (readonly) BOOL hasErrors;
 
 - (PostfixCalculator*) init;
 - (void) dealloc;

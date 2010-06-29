@@ -11,8 +11,6 @@
 
 @implementation InfixToPostfix
 
-@synthesize hasErrors;
-
 - (InfixToPostfix*) init{
 	self = [super init];
 	
@@ -24,14 +22,18 @@
 }
 
 - (NSString*) parseInfix: (NSString*) infixExpression{
+	if ( ! [self hasBalancedBrackets:infixExpression]){
+		NSLog(@"Unbalanced brackets in expression");
+	    return nil;
+	}
+		
 	SimpleStack * opStack = [[SimpleStack alloc] init];
 	NSMutableString * output = [NSMutableString stringWithCapacity:[infixExpression length]];
-	
+
 	[opStack print];
 	
 	NSArray * tokens = [self tokenize: infixExpression];
 	for (NSString *token in tokens){
-		NSLog(@"token : '%@'", token);
 		if ([self precedenceOf:token] != 0){
 			// token is an operator, pop all operators of higher or equal precedence off the stack, and append them to the output
 			NSString *op = [opStack peek];
@@ -55,15 +57,13 @@
 		    while ( op  && ([op compare: @"("] != 0)){
 				[output appendString: [NSString stringWithFormat: @"%@ ", op]];
 				op = [opStack pop];
-				NSLog(@"popped token : %@", token);
 			}
 			if ( ! op || ([op compare: @"("]  != 0)){
 				NSLog(@"Error : unbalanced brackets in expression");
-				return @"";
+				return nil;
 			}
 		} else {
 			//token is an operand, append it to the output
-			NSLog(@"operand : %@", token);
 			[output appendString: [NSString stringWithFormat: @"%@ ", token]];
 		}
 		
@@ -138,7 +138,6 @@
 	if ([numberBuf length] > 0)
 		[tokens addObject:  [NSString stringWithString: numberBuf]];
 	
-	NSLog(@"tokens : [ %@ ]", [tokens componentsJoinedByString: @" , "]);	
 	return tokens;
 }
 
@@ -164,12 +163,25 @@
 		return 2;
 	else if ([operator compare: @"/"] == 0 )
 		return 2;
-	else {
-		NSLog(@"Error: invalid operator");
+	else //invalid operator
 		return 0;
-	}
-
 }
+
+- (BOOL) hasBalancedBrackets:(NSString*) expression{
+	
+	unichar c;
+	int opened = 0, closed = 0;
+
+	for (int i = 0; i< [expression length] ; i++){
+		c = [expression characterAtIndex: i];
+		if (c == '(') opened++;
+		else if (c == ')') closed++;
+	}
+	
+
+	return opened == closed;
+}
+						
 
 
 @end

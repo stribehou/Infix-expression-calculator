@@ -69,10 +69,22 @@
 	NSString * result = [itp parseInfix:@"5 + ((123.2243224545 hgh + 2) *4) - -3  "];
 	NSString * expected = @"5 123.2243224545 2 + 4 * + -3 -";
 	
-
 	
 	STAssertEqualObjects(result, expected,
 						 @"Infix to Postfix conversion error");
+
+	
+	STAssertFalse([itp hasBalancedBrackets: @"(("],
+						 @"Infix to postfix : mismatched brackets not detected");
+	
+	STAssertTrue([itp hasBalancedBrackets: @"()"], 
+				   @"Infix to postfix : matching brackets reported as unbalanced");
+
+	expected = nil;
+	result = [itp parseInfix: @"("];
+	
+	STAssertEqualObjects(result, expected,
+						 @"Infix to postfix : mismatched brackets not detected");
 	
 	[itp release];
 }
@@ -84,6 +96,11 @@
 	
 	STAssertEqualObjects(result, expected,
 						 @"Calculator result error");
+
+	expected = nil;
+	result = [calc computeExpression: @"(45345(2454"];
+	STAssertEqualObjects(expected, result, @"Calculator should have returned null to an unbalanced expression");
+	
 	[calc release];
 }
 

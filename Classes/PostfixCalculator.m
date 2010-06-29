@@ -11,8 +11,6 @@
 
 @implementation PostfixCalculator
 
-@synthesize  hasErrors;
-
 - (PostfixCalculator*) init{
 	self = [super init];
 	if (self){
@@ -37,9 +35,7 @@
 	NSArray *tokens = [strippedExpression componentsSeparatedByString: @" "];
 	
 	for(NSString* token in tokens){
-#ifdef DEBUG
-		NSLog(@"parsed token : '%@'", token);
-#endif
+
 		if ([operators containsObject:token]){
 			// operator found : unstack 2 operands and use them as operator arguments
 			NSDecimalNumber* secondOperand = (NSDecimalNumber*) [stack pop];
@@ -47,9 +43,8 @@
 
 			
 			if (! (firstOperand && secondOperand)){
-				hasErrors = YES;
 				NSLog(@"Not enough operands on stack for given operator");
-				return [NSDecimalNumber decimalNumberWithString : @"-1"];
+				return nil;
 			}
 			
 			// compute result, and push it back on the stack
@@ -58,18 +53,11 @@
 											 withFirstOperand: firstOperand 
 											withSecondOperand:secondOperand];
 			[stack push:result];
-#ifdef DEBUG			
-			NSLog(@"stack result");
-			[stack print];
-#endif
+
 		} else {
 			//number found, push it on the stack 
 			NSDecimalNumber * operand = [NSDecimalNumber decimalNumberWithString : token];
 			[stack push: operand];
-#ifdef DEBUG				
-			NSLog(@"stack push");
-			[stack print];
-#endif
 		}
 	}
 	
@@ -77,8 +65,7 @@
 	if ([stack size] != 1){
 		NSLog(@"Error : Invalid RPN expression. Stack contains %d elements after computing expression, only one should remain.", 
 			  [stack size]);
-		hasErrors = YES;
-		return [[NSDecimalNumber decimalNumberWithString : @"-1"] autorelease];
+		return nil;
 	} else {
 		return  [stack pop];
 	}
@@ -87,10 +74,6 @@
 - (NSDecimalNumber *) computeOperator:(NSString*) operator
 					 withFirstOperand:(NSDecimalNumber*) firstOperand withSecondOperand:(NSDecimalNumber*) secondOperand{
 	NSDecimalNumber * result;
-	
-#ifdef DEBUG
-	NSLog(@"Executing operation :  %@ %@ %@", [firstOperand stringValue], token, [secondOperand stringValue]);
-#endif
 	
 	if ([operator compare: @"+"] == 0) {
 		result = [firstOperand decimalNumberByAdding: secondOperand];

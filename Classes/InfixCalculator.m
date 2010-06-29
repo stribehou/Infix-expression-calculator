@@ -28,17 +28,12 @@
 
 - (NSDecimalNumber*) computeExpression: (NSString*) infixExpression {
 	NSString* postfixExpression = [itp parseInfix: infixExpression];
-	NSDecimalNumber *result = nil;
 	
-	if ([itp hasErrors])
-		NSLog(@"Error while transforming expression to infix");
-	else {
-		result = [postCalc compute: postfixExpression];
-		if ([postCalc hasErrors])
-			NSLog(@"Error while calculating postix expression result");
+	if (postfixExpression) {
+		return [postCalc compute: postfixExpression];
 	}
-
-	return result;
+	
+	return nil;
 }
 
 @end
