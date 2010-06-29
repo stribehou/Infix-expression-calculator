@@ -52,8 +52,12 @@
 			NSDecimalNumber * result =  [self computeOperator:token 
 											 withFirstOperand: firstOperand 
 											withSecondOperand:secondOperand];
-			[stack push:result];
 
+			if (result == [NSDecimalNumber notANumber])
+				return result; // an error occured during operator calculation, bail early
+			
+			  [stack push:result];
+			
 		} else {
 			//number found, push it on the stack 
 			NSDecimalNumber * operand = [NSDecimalNumber decimalNumberWithString : token];
@@ -83,7 +87,12 @@
 		result = [firstOperand decimalNumberBySubtracting: secondOperand];
 	}
 	else if ([operator compare: @"/"] == 0) {
-		result = [firstOperand decimalNumberByDividingBy: secondOperand];	}
+		if ([[NSDecimalNumber zero] compare: secondOperand] == NSOrderedSame){
+			NSLog(@"Divide by zero !");
+			return [NSDecimalNumber notANumber];
+		}
+		else 
+			result = [firstOperand decimalNumberByDividingBy: secondOperand];	}
 	
 	return result;
 }

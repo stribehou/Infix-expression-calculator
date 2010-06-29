@@ -60,6 +60,13 @@
 	STAssertEqualObjects(result, expected,
 						 @"Postfix calculation error : unexpected result");
 	
+	expected = [NSDecimalNumber notANumber];
+	result = [postfix compute:@"5 0 /"];
+	
+	STAssertEqualObjects(result, expected,
+						 @"Postfix calculation error : divide by zero not handled properly");
+
+
 	[postfix release];
 }
 
