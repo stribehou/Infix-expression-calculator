@@ -16,7 +16,6 @@
 	if (self){
 		operators = [NSArray arrayWithObjects: @"+", @"-", @"*", @"/", nil];
 		[operators retain];
-		stack = [[SimpleStack alloc] init];
 	}
 	
 	return self;
@@ -24,12 +23,12 @@
 
 - (void) dealloc{
 	[operators release];
-	[stack release];
 	[super dealloc];
 }
 
 
 - (NSDecimalNumber*) compute:(NSString*) postfixExpression{
+	stack = [[SimpleStack alloc] init];
 	NSString* strippedExpression = [postfixExpression stringByTrimmingCharactersInSet:
 									[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	NSArray *tokens = [strippedExpression componentsSeparatedByString: @" "];
@@ -71,7 +70,9 @@
 			  [stack size]);
 		return nil;
 	} else {
-		return  [stack pop];
+		NSDecimalNumber * result = [[[stack pop] retain] autorelease];
+		[stack release];
+		return result;
 	}
 }
 
