@@ -16,11 +16,7 @@
 
 - (InfixToPostfix*) init;
 - (void) dealloc;
-- (BOOL) precedenceOf : (NSString*) operator isHigherOrEqualThan: (NSString*) otherOperator;
-- (NSString*) parseInfix: (NSString*) infixExpression;
-- (NSArray*) tokenize: (NSString*) expression;
-- (NSUInteger) precedenceOf: (NSString*) operator;
-- (BOOL) hasBalancedBrackets:(NSString *)expression;
 
-- (void) addNumber:(NSMutableString*) numberBuf andToken:(unichar) token toTokens : (NSMutableArray*) tokens; 
+- (NSString*) parseInfix: (NSString*) infixExpression;
+
 @end

@@ -8,6 +8,10 @@
 
 #import "PostfixCalculator.h"
 
+@interface PostfixCalculator ()
+- (NSDecimalNumber *) computeOperator:(NSString*) operator
+					 withFirstOperand:(NSDecimalNumber*) firstOperand withSecondOperand:(NSDecimalNumber*) secondOperand;
+@end
 
 @implementation PostfixCalculator
 
@@ -76,6 +80,8 @@
 	}
 }
 
+/* private methods */
+
 - (NSDecimalNumber *) computeOperator:(NSString*) operator
 					 withFirstOperand:(NSDecimalNumber*) firstOperand withSecondOperand:(NSDecimalNumber*) secondOperand{
 	NSDecimalNumber * result;
@@ -97,5 +103,6 @@
 	
 	return result;
 }
+
 
 @end

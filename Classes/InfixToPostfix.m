@@ -8,6 +8,14 @@
 
 #import "InfixToPostfix.h"
 
+@interface InfixToPostfix ()
+- (NSArray*) tokenize: (NSString*) expression;
+- (NSUInteger) precedenceOf: (NSString*) operator;
+- (BOOL) hasBalancedBrackets:(NSString *)expression;
+- (BOOL) precedenceOf : (NSString*) operator isHigherOrEqualThan: (NSString*) otherOperator;
+- (void) addNumber:(NSMutableString*) numberBuf andToken:(unichar) token toTokens : (NSMutableArray*) tokens; 
+
+@end
 
 @implementation InfixToPostfix
 
@@ -83,6 +91,9 @@
 }
 
 
+/* private methods */
+
+
 - (NSArray*) tokenize: (NSString*) expression {
 	NSMutableArray * tokens = [NSMutableArray arrayWithCapacity:[expression length]];
 	
@@ -113,7 +124,7 @@
 					lastTokenWasAnOperator = YES;
 					[self addNumber: numberBuf andToken: c toTokens:tokens];
 				}
-
+				
 				break;
 			case '1':
 			case '2':
@@ -171,14 +182,14 @@
 	
 	unichar c;
 	int opened = 0, closed = 0;
-
+	
 	for (int i = 0; i< [expression length] ; i++){
 		c = [expression characterAtIndex: i];
 		if (c == '(') opened++;
 		else if (c == ')') closed++;
 	}
 	
-
+	
 	return opened == closed;
 }
 						

@@ -18,7 +18,4 @@
 - (PostfixCalculator*) init;
 - (void) dealloc;
 - (NSDecimalNumber *) compute:(NSString*) postfixExpression;
-- (NSDecimalNumber *) computeOperator:(NSString*) operator
-withFirstOperand:(NSDecimalNumber*) firstOperand withSecondOperand:(NSDecimalNumber*) secondOperand;
-
 @end
