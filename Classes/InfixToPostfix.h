@@ -1,10 +1,8 @@
-//
-//  InfixToPostfix.h
-//  infix-expression-calculator
-//
-//  Created by Samuel Tribehou on 27/06/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
-//
+/***
+ Copyright (c) 2010 Samuel Tribehou.
+ Licensed under: whatever license you want.
+ ***/
+
 
 #import <Foundation/Foundation.h>
 #import "SimpleStack.h"

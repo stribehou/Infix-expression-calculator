@@ -1,0 +1,30 @@
+This project is an Objective-C library which computes the result of (very simple for now) mathematical expressions.
+Currently supported operations are additions, substractions, divisions, and multiplications. (Nested brackets are suported.)
+
+It's composed of 3 classes : 
+- An implementation of the shunting yard algorithm, which converts a string from infix to postfix notaation.
+- A RPN calculator, which computes the result of a postfix expression.
+- A "calculator" wrapper around those classes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

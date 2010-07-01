@@ -1,10 +1,8 @@
-//
-//  PostfixParser.m
-//  iphoneCalc
-//
-//  Created by Samuel Tribehou on 27/06/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
-//
+/***
+ Copyright (c) 2010 Samuel Tribehou.
+ Licensed under: whatever license you want.
+ ***/
+
 
 #import "PostfixCalculator.h"
 
@@ -18,7 +16,7 @@
 - (PostfixCalculator*) init{
 	self = [super init];
 	if (self){
-		operators = [NSArray arrayWithObjects: @"+", @"-", @"*", @"/", nil];
+		operators = [NSArray arrayWithObjects: @"+", @"-", @"*", @"/", @"^", nil];
 		[operators retain];
 	}
 	
@@ -92,8 +90,9 @@
 		result = [firstOperand decimalNumberByMultiplyingBy: secondOperand];
 	} else if ([operator compare: @"-"] == 0) {
 		result = [firstOperand decimalNumberBySubtracting: secondOperand];
-	}
-	else if ([operator compare: @"/"] == 0) {
+	} else if ([operator compare: @"^"] == 0) {
+		result = [firstOperand decimalNumberByRaisingToPower: [secondOperand intValue]];
+	} else if ([operator compare: @"/"] == 0) {
 		if ([[NSDecimalNumber zero] compare: secondOperand] == NSOrderedSame){
 			NSLog(@"Divide by zero !");
 			return [NSDecimalNumber notANumber];

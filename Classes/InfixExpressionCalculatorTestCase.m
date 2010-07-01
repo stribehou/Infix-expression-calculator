@@ -1,10 +1,7 @@
-//
-//  TestTestCase.m
-//  calc
-//
-//  Created by Samuel Tribehou on 24/06/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
-//
+/***
+ Copyright (c) 2010 Samuel Tribehou.
+ Licensed under: whatever license you want.
+ ***/
 
 #define USE_APPLICATION_UNIT_TEST 1
 
@@ -73,19 +70,12 @@
 - (void) testInfixToPostfix{
 
 	InfixToPostfix *itp = [[InfixToPostfix alloc] init];
-	NSString * result = [itp parseInfix:@"5 + ((123.2243224545 hgh + 2) *4) - -3  "];
-	NSString * expected = @"5 123.2243224545 2 + 4 * + -3 -";
+	NSString * result = [itp parseInfix:@"5 + ((123.2243224545 hgh + 2) *4) - -3^2  "];
+	NSString * expected = @"5 123.2243224545 2 + 4 * + -3 2 ^ -";
 	
 	
 	STAssertEqualObjects(result, expected,
 						 @"Infix to Postfix conversion error");
-
-	
-	STAssertFalse([itp hasBalancedBrackets: @"(("],
-						 @"Infix to postfix : mismatched brackets not detected");
-	
-	STAssertTrue([itp hasBalancedBrackets: @"()"], 
-				   @"Infix to postfix : matching brackets reported as unbalanced");
 
 	expected = nil;
 	result = [itp parseInfix: @"("];
@@ -98,8 +88,8 @@
 
 - (void) testCalculator{
 	InfixCalculator * calc = [[InfixCalculator alloc] init];
-	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString: @"42"];
-	NSDecimalNumber * result = [calc computeExpression: @"(10.5656565656 * 2 + ((40 / 4) *4) / 4 *2 +20 *4 -78 - 0.5656565656 *2)"];
+	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString: @"1764"];
+	NSDecimalNumber * result = [calc computeExpression: @"(10.5656565656 * 2 + ((40 / 4) *4) / 4 *2 +20 *4 -78 - 0.5656565656 *2)^2"];
 	
 	STAssertEqualObjects(result, expected,
 						 @"Calculator result error");

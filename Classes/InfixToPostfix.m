@@ -1,10 +1,8 @@
-//
-//  InfixToPostfix.m
-//  infix-expression-calculator
-//
-//  Created by Samuel Tribehou on 27/06/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
-//
+/***
+ Copyright (c) 2010 Samuel Tribehou.
+ Licensed under: whatever license you want.
+ ***/
+
 
 #import "InfixToPostfix.h"
 
@@ -108,6 +106,7 @@
 			case '+':
 			case '/':
 			case '*':
+			case '^':
 				lastTokenWasAnOperator = YES;
 				[self addNumber: numberBuf andToken: c toTokens:tokens];
 				break;
@@ -173,7 +172,9 @@
 	else if ([operator compare: @"*"] == 0 )
 		return 2;
 	else if ([operator compare: @"/"] == 0 )
-		return 2;
+		return 2;		
+	else if ([operator compare: @"^"] == 0 )
+		return 3;
 	else //invalid operator
 		return 0;
 }
