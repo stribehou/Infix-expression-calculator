@@ -11,6 +11,8 @@
 	NSMutableArray *array;
 }
 
+@property (readonly, retain) NSMutableArray *array;
+
 - (SimpleStack*) init;
 - (void) dealloc;
 - (void) push:(id) object;

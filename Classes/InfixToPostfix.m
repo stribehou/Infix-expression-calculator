@@ -138,6 +138,7 @@
 			case '.':
 				lastTokenWasAnOperator = NO;
 				[numberBuf appendString : [NSString stringWithCharacters: &c length:1]];
+				break;
 			case ' ':
 				break;
 			default:

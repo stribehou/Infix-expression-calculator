@@ -9,6 +9,8 @@
 
 @implementation SimpleStack
 
+@synthesize array;
+
 - (SimpleStack*) init{
 	self = [super init];
 	if (self){
