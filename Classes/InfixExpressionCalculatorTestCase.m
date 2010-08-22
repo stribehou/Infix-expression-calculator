@@ -88,15 +88,20 @@
 
 - (void) testCalculator{
 	InfixCalculator * calc = [[InfixCalculator alloc] init];
-	NSDecimalNumber * expected = [NSDecimalNumber decimalNumberWithString: @"1764"];
-	NSDecimalNumber * result = [calc computeExpression: @"(10.5656565656 * 2 + ((40 / 4) *4) / 4 *2 +20 *4 -78 - 0.5656565656 *2)^2"];
+
 	
-	STAssertEqualObjects(result, expected,
+	STAssertEqualObjects([calc computeExpression: @"-3"], [NSDecimalNumber decimalNumberWithString: @"-3"],
+						 @"Calculator result error");
+	
+	
+	STAssertEqualObjects([calc computeExpression: @"(10.5656565656 * 2 + ((40 / 4) *4) / 4 *2 +20 *4 -78 - 0.5656565656 *2)^2"], 
+						 [NSDecimalNumber decimalNumberWithString: @"1764"],
 						 @"Calculator result error");
 
-	expected = nil;
-	result = [calc computeExpression: @"(45345(2454"];
-	STAssertEqualObjects(expected, result, @"Calculator should have returned null to an unbalanced expression");
+	
+	STAssertEqualObjects(nil, 
+	[calc computeExpression: @"(45345(2454"]					 
+						 , @"Calculator should have returned null to an unbalanced expression");
 	
 	[calc release];
 }

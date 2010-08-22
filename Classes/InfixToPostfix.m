@@ -98,7 +98,7 @@
 	unichar c;
 	NSMutableString * numberBuf = [NSMutableString stringWithCapacity: 5];
 	int length = [expression length];
-	BOOL lastTokenWasAnOperator = NO;
+	BOOL nextMinusSignIsNegativeOperator = YES;
 	
 	for (int i = 0; i< length; i++){
 		c = [expression characterAtIndex: i];
@@ -107,20 +107,20 @@
 			case '/':
 			case '*':
 			case '^':
-				lastTokenWasAnOperator = YES;
+				nextMinusSignIsNegativeOperator = YES;
 				[self addNumber: numberBuf andToken: c toTokens:tokens];
 				break;
 			case '(':
 		    case ')':
-				lastTokenWasAnOperator = NO;
+				nextMinusSignIsNegativeOperator = NO;
 				[self addNumber: numberBuf andToken: c toTokens:tokens];
 				break;
 			case '-':
-				if (lastTokenWasAnOperator){
-					lastTokenWasAnOperator = NO;
+				if (nextMinusSignIsNegativeOperator){
+					nextMinusSignIsNegativeOperator = NO;
 					[numberBuf appendString : [NSString stringWithCharacters: &c length:1]];	
 				} else {
-					lastTokenWasAnOperator = YES;
+					nextMinusSignIsNegativeOperator = YES;
 					[self addNumber: numberBuf andToken: c toTokens:tokens];
 				}
 				
@@ -136,7 +136,7 @@
 			case '9':
 			case '0':
 			case '.':
-				lastTokenWasAnOperator = NO;
+				nextMinusSignIsNegativeOperator = NO;
 				[numberBuf appendString : [NSString stringWithCharacters: &c length:1]];
 				break;
 			case ' ':
